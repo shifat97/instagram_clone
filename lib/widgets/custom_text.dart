@@ -5,6 +5,7 @@ class CustomText extends StatelessWidget {
   final double fontSize;
   final FontWeight? fontWeight;
   final Color textColor;
+  final TextAlign? alignText;
 
   const CustomText({
     super.key,
@@ -12,12 +13,14 @@ class CustomText extends StatelessWidget {
     required this.fontSize,
     this.fontWeight,
     required this.textColor,
+    this.alignText,
   });
 
   @override
   Widget build(BuildContext context) {
     return Text(
       title,
+      textAlign: alignText ?? TextAlign.left,
       style: TextStyle(
         fontFamily: 'assets/fonts/SF-Pro-Text-Regular.otf',
         color: textColor,

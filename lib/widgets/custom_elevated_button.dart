@@ -6,16 +6,18 @@ class CustomElevatedButton extends StatelessWidget {
   final String buttonText;
   final double? buttonWidth;
   final Color? buttonColor;
-  final Function? buttonHandler;
+  final VoidCallback buttonHandler;
   final double? buttonPadding;
+  final FontWeight? buttonFontWeight;
 
   const CustomElevatedButton({
     super.key,
     required this.buttonText,
     this.buttonWidth,
     this.buttonColor,
-    this.buttonHandler,
+    required this.buttonHandler,
     this.buttonPadding,
+    this.buttonFontWeight,
   });
 
   @override
@@ -23,7 +25,7 @@ class CustomElevatedButton extends StatelessWidget {
     return SizedBox(
       width: buttonWidth ?? double.infinity,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: buttonHandler,
         style: ElevatedButton.styleFrom(
           backgroundColor: buttonColor ?? AppColors.primaryButtonColor,
           padding: buttonPadding == null
@@ -33,11 +35,11 @@ class CustomElevatedButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
           ),
         ),
-        child: const CustomText(
+        child: CustomText(
           title: 'Log in',
           fontSize: 14,
-          fontWeight: FontWeight.w600,
-          textColor: Color(0xFFFFFFFF),
+          fontWeight: buttonFontWeight ?? FontWeight.normal,
+          textColor: const Color(0xFFFFFFFF),
         ),
       ),
     );
