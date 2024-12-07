@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/views/home_screen.dart';
 import 'package:instagram_clone/views/splash_screen.dart';
 
 void main() {
@@ -14,8 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SafeArea(
-        // child: SplashScreen(),
-        child: HomeScreen(),
+        child: SplashScreen(),
       ),
     );
   }
