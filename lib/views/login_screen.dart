@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:instagram_clone/views/home_screen.dart';
 import 'package:instagram_clone/views/splash_screen.dart';
 import 'package:instagram_clone/widgets/custom_elevated_button.dart';
 import 'package:instagram_clone/widgets/custom_text.dart';
@@ -119,7 +120,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       buttonPadding: 14,
                       buttonFontWeight: FontWeight.w600,
                       buttonHandler: () {
-                        if (formState.currentState!.validate()) {}
+                        if (formState.currentState!.validate()) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomeScreen(),
+                            ),
+                          );
+                        }
                       },
                     ),
                     const SizedBox(
